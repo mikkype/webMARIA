@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>store copy</title>
+  <!--para el javascript-->
+  <script type="text/javascript" src="/JQuery 3.7/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="/BootStrap 5.3/js/bootstrap.bundle.min.js"></script>
+  <script src=""></script>
+  <script src="/js/addtocart.js"></script>
+
+
+
+
+  <!--para el css-->
+  <link rel="stylesheet" href="/BootStrap 5.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/logo2.jpeg">
+</head>
+
+<body>
+  <!------------header------>
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index3.html">
+        <img src="img/logo2.jpeg" width="50px">
+        Audio Store
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-store-web"
+        aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-store-web">
+
+        <ul class="navbar-nav d-flex flex-wrap justify-content-center align-items-center gap-3">
+          <a href="index.html" class="btn home-btn-nav">
+            <img src="img/casa.png" alt="">
+          </a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarAuriculares" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Auriculares
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Bluetooth</a>
+              <a class="dropdown-item" href="#">Cable</a>
+              <a class="dropdown-item" href="#">Gaming</a>
+              <a class="dropdown-item" href="#">In-ear</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarAltavoces" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Altavoces
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Portatiles Bluetooth</a>
+              <a class="dropdown-item" href="#">Radio FM</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navabarSoporte" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Soporte
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Compras</a>
+              <a class="dropdown-item" href="#">Pagos</a>
+              <a class="dropdown-item" href="#">FAQ</a>
+            </div>
+          </li>
+          <!-- search -->
+          <button class="search-btn-nav" data-bs-toggle="modal" data-bs-target="#searchBtn">
+            <img src="img/search.png" alt="">
+          </button>
+          <!-- carrito de compras icon link-->
+          <div class="nav-cart">
+            <a href="shopping-cart.html" class="btn btn-link-cart link-btn-cart ">
+              <img src="img/shopping-cart.png" alt="">
+              <span class="quantity-cart-nav">0</span>
+            </a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!------------fin header-->
+
+  <!------------main-------->
+  <!-- carousel -->
+  <div id="carouselWebStore" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/jbl_tune500_expo.png" class="d-block w-100 object-fit-cover" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="img/jbl_white_expo.png" class="d-block w-100 object-fit-cover" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/jbl_tune520bt_expo.png" class="d-block w-100 object-fit-cover" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselWebStore" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselWebStore" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  
+
+  <!--aqui muestro la lista de productos-->
+  <div class="container">
+    <div class="row row-card-show" id="listaProductos">
+      <!-- Las tarjetas se agregarán aquí dinámicamente -->
+    </div>
+  </div>
+
+<!----aqui muestro los  productos agregados al carrito de compras -->
+
+<section id="CarritoCompras">
+
+  <div id="productosAgregados" class="container lista-card-container ">
+
+  </div>
+</section>
+
+  <!------------fin main---->
+  <!------------footer------>
+  <footer class="container container-footer">
+    <div class="row row-footer">
+      <div class="col-12 col-md-4">
+        <p class="h3">footer1</p>
+        <ul class="footer-link">
+          <li><a href="">link1</a></li>
+          <li><a href="">link1</a></li>
+          <li><a href="">link1</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-4">
+        <p class="h3">footer2</p>
+        <ul class="footer-link">
+          <li><a href="">link1</a></li>
+          <li><a href="">link1</a></li>
+          <li><a href="">link1</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-4">
+        <p class="h3">footer3</p>
+        <ul class="footer-link">
+          <li><a href="">link1</a></li>
+          <li><a href="">link1</a></li>
+          <li><a href="">link1</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col">
+        <p class="h5">© 2024 Copyright</p>
+      </div>
+    </div>
+
+  </footer>
+  <!------------fin footer-->
+
+  <!------------section----->
+  <h1>NAVEGADOR</h1>
+
+  <a href="index.html" class="btn btn-primary">Principal</a>
+  <a href="shopping-cart.html" class="btn btn-primary">offcanvas</a>
+  <a href="anterior.html" class="btn btn-primary">anterior</a>
+  <!-- carritos botones -->
+  <div class="container carrito-botones d-flex justify-content-between">
+    <!-- carrito icon 1-->
+    <div class="icon-cart-nav">
+      <img src="img/shopping-cart.png" alt="">
+      <span class="quantity-items-icon">0</span>
+    </div>
+
+    <!-- carrito de compras link 2-->
+    <div class="nav-cart">
+      <a href="anterior.html" class="btn btn-link-cart link-btn-cart ">
+        <img src="img/shopping-cart.png" alt="">
+        <span class="quantity-cart-nav">0</span>
+      </a>
+    </div>
+
+    <!-- carrito de compras modal 3-->
+    <div class="nav-cart">
+      <button class="btn btn-modal-cart link-btn-cart" data-bs-toggle="modal" data-bs-target="#btnModalCart">
+        <img src="img/shopping-cart.png" alt="">
+      </button>
+      <span class="quantity-cart-nav">0</span>
+    </div>
+
+    <!-- carrito de compras offcanvas 4-->
+    <div class="nav-cart">
+      <button class="btn btn-offcanvas-cart link-btn-cart" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#btnOffcanvasCart" aria-controls="offcanvasRight">
+        <img src="img/shopping-cart.png" alt="">
+      </button>
+      <span class="quantity-cart-nav">0</span>
+    </div>
+  </div>
+  <!--  -->
+
+  <!-- carddinamico muestra -->
+
+  <h1>muestra lo agregado al carrito</h1>
+  <div class="container">
+    <div class="row row-card-show" id="">
+    
+    </div>
+  </div>
+
+  <h1>MUESTRA LO AGREGADO AL CARRITO 2</h1>
+<!--------mostrar productos agregados al shopping-cart-->
+
+<section id="addcart">
+
+  <div id="" class="container lista-card-container ">
+
+  </div>
+</section>
+
+
+
+  
+
+  <!-- Modal--search--boton -->
+  <div class="modal fade right" id="searchBtn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close sear" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- modal inicio -->
+          <form class="d-flex ml-auto">
+            <input class="form-control me-2" type="search" aria-label="Search">
+            <button class="btn btn-outline-dark search-btn-modal" type="submit">Buscar</button>
+          </form>
+          <!--modal fin-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          <button type="button" class="btn btn-primary">aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--carrito de compras botones trigger-->
+  <div class="modal fade right" id="btnModalCart" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="btnModalCart" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">carrito modal</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- modal inicio -->
+          <!---trabajando-->
+          <!--modal fin-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- offcanvas carrito de compra de botones-->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="btnOffcanvasCart" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas derecha</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- inicio contenido del cuerpo offcanvas -->
+      <!-- fin contenido del cuerpo offcanvas -->
+    </div>
+  </div>
+
+  <!------------fin section-->
+
+
+
+
+
+</body>
+
+</html>

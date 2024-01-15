@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Store</title>
+    <!--para el javascript-->
+    <script type="text/javascript" src="/JQuery 3.7/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/BootStrap 5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/app4.js"></script>
+    <script src=""></script>
+    <!--para el css-->
+    <link rel="stylesheet" href="/BootStrap 5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpeg">
+</head>
+
+<body>
+
+    <!------------header------>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">
+                <img src="img/logo2.jpeg" width="50px">
+                Audio Store
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-store-web"
+                aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-store-web">
+
+                <ul class="navbar-nav d-flex flex-wrap justify-content-center align-items-center gap-3">
+                    <a href="index3.html" class="btn home-btn-nav">
+                        <img src="img/casa.png" alt="">
+                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarAuriculares" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Auriculares
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Bluetooth</a>
+                            <a class="dropdown-item" href="#">Cable</a>
+                            <a class="dropdown-item" href="#">Gaming</a>
+                            <a class="dropdown-item" href="#">In-ear</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarAltavoces" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Altavoces
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Portatiles Bluetooth</a>
+                            <a class="dropdown-item" href="#">Radio FM</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navabarSoporte" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Soporte
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Compras</a>
+                            <a class="dropdown-item" href="#">Pagos</a>
+                            <a class="dropdown-item" href="#">FAQ</a>
+                        </div>
+                    </li>
+                    <!-- search -->
+                    <button class="search-btn-nav" data-bs-toggle="modal" data-bs-target="#searchBtn">
+                        <img src="img/search.png" alt="">
+                    </button>
+                    <!-- carrito de compras icon link-->
+                    <div class="nav-cart">
+                        <a href="shopping-cart3.html" class="btn btn-link-cart link-btn-cart ">
+                            <img src="img/shopping-cart.png" alt="">
+                            <span class="quantity-cart-nav">0</span>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!------------fin header-->
+    <!------------main-------->
+    
+    <div class="container text-center">
+        <h1 class="color-dark">Auriculares</h1>
+    </div>
+     <!-------------------------------------inicio de web dinamico--------->
+    <!--aqui muestro la lista de productos-->
+
+
+    <div class="container">
+        <div class="row row-card-show" id="listaProductos">
+            <!-- Las tarjetas se agregarán aquí dinámicamente -->
+        </div>
+    </div>
+
+
+
+    <!------aqui muestro carrito de compras-->
+
+    <section id="carrito">
+
+        <div id="actualizarCarrito" class="container lista-card-container ">
+
+        </div>
+    </section>
+
+    <!-------------------------------------fin de web dinamico--------->
+
+
+    <div class="container">
+        <div id="totalContainer" class="card total-shopping-cart-container">
+            <div id="" class="card-body h-100 card-total-container">
+
+                <div id="" class="row row-total container-top">
+                    <div id="" class="col-12 titulo-total-container">
+                        <h5>cantidad total</h5>
+                    </div>
+                </div>
+
+                <div id="" class="row row-total container-lista">
+                    <div id="" class="col-12 subtotal-lista">
+                        <div class="row row-subtotal-lista">
+                            <div class="col-6">
+                                <h5 class="subtotal-lista">subtotal</h5>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="precio-subtotal-lista"><span>€</span></h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="" class="col-12 total-lista">
+                        <div class="row row-total-lista">
+                            <div class="col-6">
+                                <h5 class="total-lista">total</h5>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="precio-total-lista"><span>€</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="row row-total container-top">
+                    <div id="" class="col-12 col-md-8 titulo-total-container-botones ">
+
+                        <!-- modal tarjeta de credito -->
+                        <!-- Button trigger modal tarjeta de credito -->
+                        <div class="d-grid gap-2 d-md-block">
+                            <button type="button" class="btn btn-primary btn-tarjeta-credito" data-bs-toggle="modal"
+                                data-bs-target="#btn-tarjeta-credito" data-bs-whatever="@mdo">tarjeta de
+                                credito</button>
+
+                            <button type="button" class="btn btn-primary btn-anular-compra" data-bs-toggle="modal"
+                                data-bs-target="#btn-anular-compra" data-bs-whatever="@fat">anular</button>
+
+                            <button type="button" class="btn btn-primary btn-validar-compra" data-bs-toggle="modal"
+                                data-bs-target="#btn-validar-compra" data-bs-whatever="@getbootstrap">comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------fin main---->
+
+    <!------------inicio footer------>
+    <footer class="container container-footer">
+        <div class="row row-footer">
+            <div class="col-12 col-md-4">
+                <p class="h3">Audio Store</p>
+                <ul class="footer-link">
+                    <li><a href="index3.html">Inicio</a></li>
+                    <li><a href="">JBL</a></li>
+                    <li><a href="">Altavoces</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4">
+                <p class="h3">Auriculares</p>
+                <ul class="footer-link">
+                    <li><a href="">Bluetooth</a></li>
+                    <li><a href="">In-ear</a></li>
+                    <li><a href="">TWS</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4">
+                <p class="h3">Soporte</p>
+                <ul class="footer-link">
+                    <li><a href="">Nosotros</a></li>
+                    <li><a href="">Ubicanos</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <p class="h5">© 2024 Copyright</p>
+            </div>
+        </div>
+
+    </footer>
+    <!------------fin footer------------------------------------------------------------------->
+
+
+    <!------------------------------------incio de hidden------------------------------------>
+
+    <!-- Modal del boton buscador-->
+    <div class="modal fade right" id="searchBtn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Buscador</h3>
+                    <button type="button" class="btn-close sear" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- modal inicio -->
+                    <form class="d-flex ml-auto">
+                        <input class="form-control me-2" type="search" aria-label="Search">
+                        <button class="btn btn-outline-dark search-btn-modal" type="submit">Buscar</button>
+                    </form>
+                    <!--modal fin-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                    <button type="button" class="btn btn-primary">aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    
+
+    <!--carrito de compras botones trigger-->
+    <div class="modal fade right" id="btnModalCart23" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="btnModalCart" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">carrito modal</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- modal inicio -->
+
+                    <!------aqui muestro carrito de compras-->
+
+                    <section id="carrito">
+
+                        <div id="actualizarCarrito" class="container lista-card-container ">
+
+                        </div>
+                    </section>
+                    <!--modal fin-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!---------------aread de botones -->
+
+    <!-- Button trigger modal tarjeta de credito -->
+    <div class="modal fade right" id="btn-tarjeta-credito" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Metodo
+                        de pago
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- modal inicio -->
+                    <!---logo-->
+                    <div class="card card-payment">
+                        <div class="card-body">
+                            <div class="row mb-2 logo-payment-row">
+                                <div class="col-12">
+                                    <div class="logo-payment">
+                                        <img src="img/payment.png" class="img-fluid" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!---numero de tarjeta-->
+                            <div class="row mb-2 numero-tarjeta-row">
+                                <div class="col">
+                                    <label for="numero-tarjeta" class="numero-tarjeta">Numero de
+                                        tarjeta</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" aria-label="">
+                                        <button type="button" class="btn"><img src="img/credit-card.png" width="26p"
+                                                class="">
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---datos tarjeta-->
+                            <div class="row mb-2 datos-tarjeta">
+                                <div class="col-6 datos-tarjeta-fecha">
+                                    <label for="fecha-tarjeta">Fecha de
+                                        vencimiento</label>
+                                    <input type="text" class="form-control" aria-label="">
+                                </div>
+
+                                <div class="col-6 datos-tarjeta-cvv">
+                                    <label for="cvv-tarjeta">CVV</label>
+                                    <input type="text" class="form-control" aria-label="">
+                                </div>
+
+                            </div>
+
+                            <!---datos tarjeta-->
+                            <div class="row mb-2 nombre-titular-row">
+                                <div class="col-12 nombre-titular">
+                                    <label for="nombre-titular">Titular de la
+                                        tarjeta</label>
+                                    <input type="text" class="form-control" aria-label="">
+                                </div>
+                            </div>
+
+                            <div class="row pagar-payment-row">
+                                <div class="col-12 py-2 pagar-payment-col">
+                                    <button type="button" class="btn btn-success">Pagar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class=" modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger anular comprar-->
+    <div class="modal fade" id="btn-anular-compra" tabindex="-1" aria-labelledby="btn-anular-compra" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <h5>¿Desea anular la compra?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Si</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal modal validar compra-->
+    <div class="modal fade" id="btn-validar-compra" tabindex="-1" aria-labelledby="btn-validar-compra"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <h5>¿Desea hacer realizar la compra?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+    <!--------SU MODAL CUERPO-->
+    <!--carrito de compras botones trigger-->
+    <div class="modal fade right" id="btnModalCart123" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="btnModalCart" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">SHOPPING CART</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- modal inicio -->
+            <div class="container-fluid">
+
+              <section id="carrito">
+
+                <div id="actualizarCarrito" class="container-fluid lista-card-container ">
+
+                </div>
+              </section>
+
+
+
+
+              <!--------boton comprar con link a html3-------->
+              <div id="" class="row row-total container-top">
+                <div id="" class="col-12 col-md-8 titulo-total-container-botones ">
+
+                  <!-- modal tarjeta de credito -->
+                  <!-- Button trigger modal tarjeta de credito -->
+                  <div class="d-grid gap-2">
+
+                    <a href="shopping-cart3.html" class="btn btn-primary">comprar</a>
+
+
+                    <button type="button" class="btn btn-primary btn-validar-compra" data-bs-toggle="modal"
+                      data-bs-target="" data-bs-whatever="@getbootstrap">comprar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!--------fin comprar con link a html3-------->
+
+
+
+
+            </div>
+          </div>
+
+          <!--modal fin-->
+
+          <!---------------aread de botones -->
+          <div class=" modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+            <button type="button" class="btn btn-primary">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-------------FIN DE MODAL DE SHOPPING CArt-->
+
+
+</body>
+
+</html>

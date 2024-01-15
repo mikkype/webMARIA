@@ -1,0 +1,17 @@
+{
+    "jbl": [
+        {   "id":1,
+            "nombre": "JBL Tune 110 ",
+            "tipo": "Auriculares in-ear con cable",
+            "descripcion": [
+                "Sonido Pure Bass",
+                "Control remoto con micrófono con un solo botón",
+                "Cable plano sin enredos"
+            ],
+            "precio": "7.99 €",
+            "imagen": "../img/jbl_tune110_negro.png",
+            "categoria": "cable",
+            "modelo": "t110"
+        }
+    ]
+}

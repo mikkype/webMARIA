@@ -1,0 +1,139 @@
+<!---total -->
+<div id="totalcart" class="row row-total container-top">
+    <div id="" class="col-12 titulo-total-container">
+        <h5>cantidad total</h5>
+    </div>
+</div>
+
+<div id="" class="row row-total container-lista">
+    <div id="" class="col-12 titulo-subtotal-lista">
+        <div class="row row-subtotal-lista">
+            <div class="col-6">
+                <h5 id="subtotal-lista">subtotal</h5>
+            </div>
+            <div class="col-6">
+                <h5 id="precio-subtotal-lista"><span>€</span></h5>
+            </div>
+        </div>
+    </div>
+
+    <div id="" class="col-12 titulo-total-lista">
+        <div class="row row-total-lista">
+            <div class="col-6">
+                <h5 id="total-lista">total</h5>
+            </div>
+            <div class="col-6">
+                <h5 class="precio-total-lista"><span>€</span></h5>
+            </div>
+        </div>
+    </div>
+</div>
+id="totalCart"
+
+
+<div id="totalQuantityContainer" class="row row-total container-top">
+    <div class="col-12 titulo-total-container">
+        <h5>Cantidad Total</h5>
+    </div>
+</div>
+
+<div id="subtotalContainer" class="row row-total container-lista">
+    <div class="col-12 titulo-subtotal-lista">
+        <div class="row row-subtotal-lista">
+            <div class="col-6">
+                <h5 id="subtotal-lista">Subtotal</h5>
+            </div>
+            <div class="col-6">
+                <h5 id="precio-subtotal-lista">0 €</h5> <!-- Valor inicial, se actualizará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 titulo-total-lista">
+        <div class="row row-total-lista">
+            <div class="col-6">
+                <h5 id="total-lista">Total</h5>
+            </div>
+            <div class="col-6">
+                <h5 class="precio-total-lista">0 €</h5> <!-- Valor inicial, se actualizará dinámicamente -->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // ...
+
+    var totalQuantity = 0; // Variable para almacenar la cantidad total
+    var subtotal = 0; // Variable para almacenar el subtotal
+    var total = 0; // Variable para almacenar el precio total
+
+    // ...
+
+    function addCart() {
+        // ...
+
+        // Actualizar cantidad total, subtotal y precio total
+        totalQuantity = carrito.length;
+        subtotal = carrito.reduce((acc, producto) => acc + parseFloat(producto.precio), 0);
+        total = subtotal; // En este ejemplo, el total es igual al subtotal
+
+        // Actualizar los elementos HTML
+        $("#totalQuantityContainer h5").text("Cantidad Total: " + totalQuantity);
+        $("#precio-subtotal-lista").text(subtotal.toFixed(2) + " €");
+        $(".precio-total-lista").text(total.toFixed(2) + " €");
+
+        // ...
+    }
+
+    // Manejador de eventos para el botón de incremento
+    $("#incrementoBtn").click(function () {
+        // Incrementar la cantidad para el producto seleccionado (puede que necesites modificar esto según tu estructura de datos)
+        // Por ejemplo, si tu array carrito tiene una propiedad cantidad, puedes incrementarla así carrito[index].cantidad++
+        // Luego, llama a addCart() para actualizar la visualización
+        addCart();
+    });
+
+    // Manejador de eventos para el botón de decremento
+    $("#decrementoBtn").click(function () {
+        // Decrementar la cantidad para el producto seleccionado (puede que necesites modificar esto según tu estructura de datos)
+        // Por ejemplo, si tu array carrito tiene una propiedad cantidad, puedes decrementarla así carrito[index].cantidad--
+        // Luego, llama a addCart() para actualizar la visualización
+        addCart();
+    });
+
+    // ...
+
+</script>
+
+<div id="totalCart" class="row row-total container-cart">
+    <div class="col-12 titulo-total-cart">
+        <div class="row row-total-cart">
+            <div class="col-6">
+                <h5 id="subtotal-cart">Subtotal: <span id="dynamic-subtotal">0 €</span></h5>
+            </div>
+            <div class="col-6">
+                <h5 id="total-cart">Total: <span id="dynamic-total">0 €</span></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function addCart() {
+        // ...
+
+        // Actualizar cantidad total, subtotal y precio total
+        totalQuantity = carrito.length;
+        subtotal = carrito.reduce((acc, producto) => acc + parseFloat(producto.precio), 0);
+        total = subtotal; // En este ejemplo, el total es igual al subtotal
+
+        // Actualizar los elementos HTML
+        $("#totalQuantityContainer h5").text("Cantidad Total: " + totalQuantity);
+        $("#precio-subtotal-lista").text(subtotal.toFixed(2) + " €");
+        $(".precio-total-lista").text(total.toFixed(2) + " €");
+
+        // Actualizar el nuevo elemento totalCart
+        $("#dynamic-subtotal").text(subtotal.toFixed(2) + " €");
+        $("#dynamic-total").text(total.toFixed(2) + " €");
+    }
+
+</script>

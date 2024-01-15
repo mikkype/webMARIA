@@ -1,0 +1,86 @@
+{
+    "jbl": [
+        {   "id":1,
+            "nombre": "JBL Tune 110 ",
+            "tipo": "Auriculares in-ear con cable",
+            "descripcion": [
+                "Sonido Pure Bass",
+                "Control remoto con micrófono con un solo botón",
+                "Cable plano sin enredos"
+            ],
+            "precio": "8.00 ",
+            "imagen": "../test/jbl_tune110_blanco.png",
+            "categoria": "cable",
+            "modelo": "t110"
+        },
+        {   "id":2,
+            "nombre": "JBL Tune 500",
+            "tipo": " Auriculares on-ear con cable",
+            "descripcion": [
+                "Sonido Pure Bass",
+                "Control remoto con micrófono con un solo botón",
+                "Diseño ligero y plegable"
+            ],
+            "precio": "20.00 ",
+            "imagen": "../test/jbl_tune500_azul.png",
+            "categoria": "cable",
+            "modelo": "t500"
+        },
+        {
+            "id":3,
+            "nombre": "JBL Tune 520BT",
+            "tipo": "Auriculares on-ear inalámbricos",
+            "descripcion": [
+                "Sonido Pure Bass",
+                "Bluetooth 5.3 sin pérdida de calidad",
+                "Batería de 57 horas con carga rápida (5 minutos = 3 horas)"
+            ],
+            "precio": "30.00 ",
+            "imagen": "../test/jbl_tune520bt_blanco.png",
+            "categoria": "bluetooth",
+            "modelo": "t520bt"
+        },
+        {   
+            "id":4,
+            "nombre": "JBL Tune 230NC TWS ",
+            "tipo": " Auriculares in-ear buds inalámbricos",
+            "descripcion": [
+                "Cancelación de ruido activa",
+                "Diseño cómodo True Wireless",
+                "Bluetooth 5.0 sin pérdida de calidad"
+            ],
+            "precio": "40.00 ",
+            "imagen": "../test/jbl_tune230nc_negrobuds.png",
+            "categoria": "bluetooth",
+            "modelo": "t230nc"
+        },
+        {   
+            "id":5,
+            "nombre": "JBL Charge5",
+            "tipo": " Altavoz portátil inalámbrico",
+            "descripcion": [
+                "Conexión Bluetooth hasta 2 teléfonos móviles",
+                "Sonido JBL Original Pro Potencia de salida de 40W",
+                "Batería integrada de 20 horas"
+            ],
+            "precio": "50.00 ",
+            "imagen": "../test/jbl_charge5_rosa.png",
+            "categoria": "altavoces",
+            "modelo": "charge5"
+        },
+        {   
+            "id":6,
+            "nombre": "JBL Tuner 2",
+            "tipo": "Altavoz portatil inalambrico",
+            "descripcion": [
+                "Sintonizador de Radio FM DAB+ 5 botones de presintonía ",
+                "Sonido JBL Original Pro",
+                "Potencia de salida de 5W "
+            ],
+            "precio": "60.00",
+            "imagen": "../test/jbl_tuner2_blanco.png",
+            "categoria": "altavoces",
+            "modelo": "tuner2"
+        }
+    ]
+}

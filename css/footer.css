@@ -1,0 +1,13 @@
+/* footer */
+.footer-link a{
+    color: #4f5f6f;
+    text-decoration: none;
+}
+.footer-link li{
+    list-style: none;
+
+    
+}
+.footer-link ul{
+    padding-left: 10px;
+}

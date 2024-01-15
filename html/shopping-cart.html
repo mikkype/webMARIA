@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <!--para el javascript-->
+    <script type="text/javascript" src="/JQuery 3.7/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/BootStrap 5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/addtocart.js"></script>
+    <!--para el css-->
+    <link rel="stylesheet" href="/BootStrap 5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpeg">
+</head>
+
+<body>
+    <h1>NAVEGADOR</h1>
+
+    <a href="index.html" class="btn btn-primary">Principal</a>
+    <a href="shopping-cart.html" class="btn btn-primary">offcanvas</a>
+    <a href="anterior.html" class="btn btn-primary">anterior</a>
+    <!-- carrito offcanvas miguel -->
+    <button class="btn carrito-btn img" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight">
+        <img src="img/shopping-cart.png" alt="">mi carrito offcanvas
+    </button>
+
+    <!-- offcanvas carrito trigger derecho-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- inicio contenido del cuerpo offcanvas -->
+            <section class="bg-dark">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center bg-danger">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row justify-content-between align-items-center">
+
+                                    <!-- col imgagen -->
+                                    <div class="col-sm-3 col-md-2 bg-primary">
+                                        <img src="test/jbl_charge5_rosa.png" class="img-fluid">
+                                    </div>
+
+                                    <!-- col descripcion-->
+                                    <div class="col-sm-5 col-md-4 bg-primary-subtle">
+                                        <p class="lead fw-normal mb-2">Basic T-shirt</p>
+                                        <p><span class="text-muted">Size: </span>M <span
+                                                class="text-muted">Color:</span> Grey</p>
+                                    </div>
+
+                                    <!-- col cantidad-->
+                                    <div class="col-sm-4 col-md-3 d-flex bg-dark-subtle">
+                                        <button class="btn btn-link px-2"
+                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                            <i class="fas fa-minus">-</i>
+                                        </button>
+
+                                        <input id="form1" min="0" name="quantity" value="2" type="number"
+                                            class="form-control form-control-sm" />
+
+                                        <button class="btn btn-link px-2"
+                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                            <i class="fas fa-plus">+</i>
+                                        </button>
+                                    </div>
+
+                                    <!-- col precio-->
+                                    <div class="col-sm-5 col-md-2 bg-primary">
+                                        <h5 class="">100 <span>€</span></h5>
+                                    </div>
+
+                                    <!---col eleminar-->
+                                    <div class="col-sm-1 col-md-1 text-end bg-dark">
+                                        <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i>xx</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- fin contenido del cuerpo offcanvas -->
+        </div>
+    </div>
+
+
+    <!-- mi diseño miguel 06 enero -->
+
+
+
+
+    <!--  -->
+    <h1>SHOPPING CART</h1>
+    <section id="carrito-muestra">
+
+        <div id="muestraelcarrito" class="container lista-card-container bg-black">
+            <!-- card shopping cart -->
+            <div id="card-shopping-cart-muestra" class="card card-shopping-cart ">
+                <!-- card body -->
+                <div id="card-body-shopping-cart" class="card-body h-100 card-body-shopping-cart">
+
+                    <!--cardbody row  -->
+                    <div id="card-body-row" class="row d-flex align-items-center justify-content-center">
+                        <!--imagen-->
+                        <div id="imagen-col" class="col-md-7 col-lg-4">
+                            <div class="imagen-shopping-cart">
+                                <img src="test/jbl_tune230nc_negrobuds.png" alt="" class="img-fluid img-sc">
+                            </div>
+                        </div>
+                        <!-- descripcion  -->
+                        <div id="descripcion-col" class="col-md-5 col-lg-3">
+                            <div class="descripcion-shopping-cart">
+                                <div class="descripcion-sc">
+                                    <h5>descripcion</h5>
+                                </div>
+                                <div class="precio-sc">
+                                    <span class="precio-sc-span">120 €</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- cantidad -->
+                        <div id="cantidad-col" class="col-md-4 col-lg-2">
+                            <div class="cantidad-shopping-cart">
+                                <div class="btn-group btn-group-sm cantidad-sc-btn" role="group"
+                                    aria-label="Small button group">
+                                    <button type="button" class="btn btn-outline-primary decremento-sc">-</button>
+                                    <input type="text" class="form-control input-sc" aria-label="Input group"
+                                        aria-describedby="btnGroupAddon">
+                                    <button type="button" class="btn btn-outline-primary incremento-sc">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  subtotal-->
+                        <div id="subtotal" class="col-md-4 col-lg-2">
+                            <div class="subtotal-shopping-cart">
+                                <h5 class="subtotal-sc text-sm-center">120<span class="euros">€</span></h5>
+                            </div>
+                        </div>
+                        <!--eliminar  -->
+                        <div id="eliminar-col"
+                            class="col-md-4 col-lg-1 d-flex align-items-center justify-content-center">
+                            <div class="eliminar-shopping-cart ">
+                                <button type="button" class="btn">
+                                    <img src="img/remove.png" alt="" class="img-fluid eliminar-sc">
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- total container-->
+            <div id="" class="card total-shopping-cart-container">
+                <div id="" class="card-body h-100 card-total-container">
+
+                    <div id="" class="row row-total container-top">
+                        <div id="" class="col-12 titulo-total-container">
+                            <h5>cantidad total</h5>
+                        </div>
+                    </div>
+
+                    <div id="" class="row row-total container-lista">
+                        <div id="" class="col-12 subtotal-lista">
+                            <div class="row row-subtotal-lista">
+                                <div class="col-6">
+                                    <h5 class="subtotal-lista">subtotal</h5>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="precio-subtotal-lista"><span>€</span></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="" class="col-12 total-lista">
+                            <div class="row row-total-lista">
+                                <div class="col-6">
+                                    <h5 class="total-lista">total</h5>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="precio-total-lista"><span>€</span></h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- botones lista contenedor de total -->
+                        <div id="" class="row row-total container-top">
+                            <div id="" class="col-12 col-md-8 titulo-total-container-botones ">
+
+                                <!-- modal tarjeta de credito -->
+                                <!-- Button trigger modal tarjeta de credito -->
+                                <div class="d-grid gap-2 d-md-block">
+                                    <button type="button" class="btn btn-primary btn-tarjeta-credito"
+                                        data-bs-toggle="modal" data-bs-target="#btn-tarjeta-credito"
+                                        data-bs-whatever="@mdo">tarjeta de
+                                        credito</button>
+
+                                    <button type="button" class="btn btn-primary btn-anular-compra"
+                                        data-bs-toggle="modal" data-bs-target="#btn-anular-compra"
+                                        data-bs-whatever="@fat">anular</button>
+
+                                    <button type="button" class="btn btn-primary btn-validar-compra"
+                                        data-bs-toggle="modal" data-bs-target="#btn-validar-compra"
+                                        data-bs-whatever="@getbootstrap">comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------------aread de botones -->
+
+    <!-- Button trigger modal tarjeta de credito -->
+    <div class="modal fade right" id="btn-tarjeta-credito" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Metodo
+                        de pago
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- modal inicio -->
+                    <!---logo-->
+                    <div class="card card-payment">
+                        <div class="card-body">
+                            <div class="row mb-2 logo-payment-row">
+                                <div class="col-12">
+                                    <div class="logo-payment">
+                                        <img src="img/payment.png" class="img-fluid" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!---numero de tarjeta-->
+                            <div class="row mb-2 numero-tarjeta-row">
+                                <div class="col">
+                                    <label for="numero-tarjeta" class="numero-tarjeta">Numero de
+                                        tarjeta</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" aria-label="">
+                                        <button type="button" class="btn"><img src="img/credit-card.png" width="26p"
+                                                class="">
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---datos tarjeta-->
+                            <div class="row mb-2 datos-tarjeta">
+                                <div class="col-6 datos-tarjeta-fecha">
+                                    <label for="fecha-tarjeta">Fecha de
+                                        vencimiento</label>
+                                    <input type="text" class="form-control" aria-label="">
+                                </div>
+
+                                <div class="col-6 datos-tarjeta-cvv">
+                                    <label for="cvv-tarjeta">CVV</label>
+                                    <input type="text" class="form-control" aria-label="">
+                                </div>
+
+                            </div>
+
+                            <!---datos tarjeta-->
+                            <div class="row mb-2 nombre-titular-row">
+                                <div class="col-12 nombre-titular">
+                                    <label for="nombre-titular">Titular de la
+                                        tarjeta</label>
+                                    <input type="text" class="form-control" aria-label="">
+                                </div>
+                            </div>
+
+                            <div class="row pagar-payment-row">
+                                <div class="col-12 py-2 pagar-payment-col">
+                                    <button type="button" class="btn btn-success">Pagar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class=" modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger anular comprar-->
+    <div class="modal fade" id="btn-anular-compra" tabindex="-1" aria-labelledby="btn-anular-compra" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send
+                        message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal modal validar compra-->
+    <div class="modal fade" id="btn-validar-compra" tabindex="-1" aria-labelledby="btn-validar-compra"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send
+                        message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    
+
+</body>
+
+</html>

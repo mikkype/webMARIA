@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ayuda</title>
+        <!--para el javascript-->
+        <script type="text/javascript" src="/JQuery 3.7/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="/BootStrap 5.3/js/bootstrap.bundle.min.js"></script>
+        <script src="/code.js"></script>
+        <!--para el css-->
+        <link rel="stylesheet" href="/BootStrap 5.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="icon" type="image/x-icon" href="img/logo2.jpeg">
+    </head>
+</head>
+
+<body>
+
+    <div id="productos">
+        <div class="producto" data-id="1" data-nombre="Producto 1" data-precio="10.00">
+            <h2>Producto 1</h2>
+            <p>Precio: $10.00</p>
+            <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="2" data-nombre="Producto 2" data-precio="20.00">
+            <h2>Producto 2</h2>
+            <p>Precio: $20.00</p>
+            <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <div id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito">
+            <!-- Aquí se mostrarán los productos agregados al carrito -->
+        </ul>
+        <p>Total: $<span id="total">0.00</span></p>
+    </div>
+
+    <script>$(document).ready(function () {
+            $('.agregar-carrito').on('click', function () {
+                // Obtener los datos del producto
+                var producto = $(this).closest('.producto');
+                var id = producto.data('id');
+                var nombre = producto.data('nombre');
+                var precio = parseFloat(producto.data('precio'));
+
+                // Agregar el producto al carrito
+                agregarAlCarrito(id, nombre, precio);
+            });
+
+            function agregarAlCarrito(id, nombre, precio) {
+                // Crear un elemento de la lista del carrito
+                var nuevoProducto = $('<li>', {
+                    text: nombre + ' - $' + precio.toFixed(2)
+                });
+
+                // Agregar el producto al carrito
+                $('#lista-carrito').append(nuevoProducto);
+
+                // Actualizar el total
+                actualizarTotal(precio);
+            }
+
+            function actualizarTotal(precio) {
+                // Obtener el total actual
+                var totalActual = parseFloat($('#total').text());
+
+                // Sumar el precio del nuevo producto al total
+                var nuevoTotal = totalActual + precio;
+
+                // Actualizar el total en la interfaz
+                $('#total').val(nuevoTotal.toFixed(2));
+            }
+        });
+    </script>
+
+
+    <button id="sub">-</button>
+    <input type="text" id="qtyBox" readonly="" value="0">
+    <button id="add">+</button>
+
+    <script>
+        let addBtn = document.querySelector('#add');
+        let subBtn = document.querySelector('#sub');
+        let qty = document.querySelector('#qtyBox');
+
+        addBtn.addEventListener('click', () => {
+            qty.value = parseInt(qty.value) + 1;
+        });
+
+        subBtn.addEventListener('click', () => {
+            if (qty.value <= 0) {
+                qty.value = 0;
+            }
+            else {
+                qty.value = parseInt(qty.value) - 1;
+            }
+        });
+    </script>
+
+    <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+            <button class="btn btn-primary">click aqui</button>
+        </div>
+    </div>
+
+
+</html>
+</body>
+
+</html>
